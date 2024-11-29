@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Car Showroom</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f3f3f3;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bd1133;
+    padding: 10px 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul b {
+    color: white;
+    font-size: 14px;
+}
+
+/* Hero Section */
+.box1 {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.box1 .p {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.box1 .p1 {
+    font-size: 30px;
+    color: #bd1133;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.box1 .p2 {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.clickbtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #bd1133;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clickbtn:hover {
+    background-color: #a10d29;
+}
+
+/* Car Images */
+.img img, 
+.img2 img, 
+.img6 img, 
+.img7 img, 
+.img9 img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Purple Box */
+.purplebox {
+    height: 50px;
+    background-color: #bd1133;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 5px;
+}
+
+/* Our Story Section */
+.box2 {
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box2 .p3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #bd1133;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.box2 .p4 {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.box2 .more {
+    text-align: center;
+    color: #bd1133;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+/* Services Section */
+.hover1, 
+.hover2, 
+.hover3, 
+.hover4, 
+.hover5, 
+.hover6 {
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hover1:hover, 
+.hover2:hover, 
+.hover3:hover, 
+.hover4:hover, 
+.hover5:hover, 
+.hover6:hover {
+    transform: scale(1.05);
+}
+
+.hover-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.p7, .p9, .p11, .p13, .p15, .p17 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #bd1133;
+}
+
+.p8, .p10, .p12, .p14, .p16, .p18 {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Featured Cars */
+.b1 {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+.b2 {
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    color: #bd1133;
+    margin-bottom: 20px;
+}
+
+/* Form Container */
+.form-container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #bd1133;
+    font-family: Arial, sans-serif;
+}
+
+.form-container label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-container input, 
+.form-container textarea, 
+.form-container button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: #bd1133;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #a10d29;
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="circle">
+            <div class="circle1"></div>
+        </div>
+        <div class="circle2"></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Cars</a></li>
+                <li><a href="#">Contact</a></li>
+                <b>CALL US (111) 222-2222</b>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="box1">
+        <p class="p">FIND THE PURE</p>
+        <p class="p1">CONTRAST FOR YOU.</p>
+        <p class="p2">From our collection of more than <br> a thousand cars.</p>
+        <button class="clickbtn">Click Here ></button>
+    </div>
+
+    <div class="img">
+        <img src="car1.png" alt="Car Image 1" height="502px" width="810px">
+    </div>
+
+    <div class="purplebox"></div>
+
+    <div class="img2">
+        <img src="car3.png" alt="Car Image 2" height="430px" width="700px">
+    </div>
+
+    <div class="img3">
+        <img src="red-line.png" alt="Red Line">
+    </div>
+
+    <div class="box2">
+        <p class="p3">OUR STORY</p>
+        <p class="p4">
+            Got listed 6861 car dealers in India spread<br>
+            across 985 cities. A complete listing of<br>
+            dealerships available across 38 brands.<br>
+            Locate authorized car showrooms in your<br>
+            city by just clicking on your preferred brand.
+        </p>
+        <div class="more">More ></div>
+    </div>
+
+    <div class="img4">
+        <img src="red-line.png" alt="Red Line" width="70px">
+    </div>
+
+    <p class="p5">OUR SERVICES</p>
+    <p class="p6">
+        Find the best services tailored to your needs.<br>
+        Experience seamless car maintenance, fast<br>
+        repairs, and more across India.
+    </p>
+
+    <div class="hover1">
+        <img src="icon1.png" alt="Periodic Maintenance" class="hover-img">
+        <p class="p7">Periodic Maintenance</p>
+        <p class="p8">Best services for all your car maintenance needs.</p>
+    </div>
+
+    <div class="hover2">
+        <img src="icon2.png" alt="Fast Repair" class="hover-img">
+        <p class="p9">Fast Repair</p>
+        <p class="p10">Quick and efficient car repair services.</p>
+    </div>
+
+    <div class="hover3">
+        <img src="icon3.png" alt="Workshop" class="hover-img">
+        <p class="p11">Mechanical Workshop</p>
+        <p class="p12">Highly equipped workshops for any car issue.</p>
+    </div>
+
+    <div class="hover4">
+        <img src="icon4.png" alt="Replacement" class="hover-img">
+        <p class="p13">Replacement Vehicle</p>
+        <p class="p14">Get a replacement vehicle when needed.</p>
+    </div>
+
+    <div class="hover5">
+        <img src="icon5.png" alt="Free Support" class="hover-img">
+        <p class="p15">Free Support</p>
+        <p class="p16">24/7 free support for all your car concerns.</p>
+    </div>
+
+    <div class="hover6">
+        <img src="icon6.png" alt="Dealership" class="hover-img">
+        <p class="p17">Dealership</p>
+        <p class="p18">Trusted dealerships for a seamless experience.</p>
+    </div>
+
+    <div class="img6">
+        <img src="car5.png" alt="Car Image 5" width="97%" height="400px">
+    </div>
+
+    <div class="img7">
+        <img src="car2.png" alt="Car Image 2" height="450px" width="760px">
+    </div>
+
+    <div class="img8">
+        <img src="red-line.png" alt="Red Line" width="70px">
+    </div>
+
+    <b class="b1">FEATURED CARS</b><br>
+    <b class="b2">Ford Mustang</b>
+
+    <!-- Added Form -->
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
